@@ -1,0 +1,3 @@
+grails/.metadata/**
+grails/libapp/target/**
+grails/libapp/.settings/**
