@@ -17,6 +17,7 @@
           <th>Price</th>
           <th></th>
           <th></th>
+          <th></th>
         </tr>
       </thead>
       <tbody>
@@ -35,6 +36,9 @@
               <g:else>
                 <g:link action="issueBook" controller="home" id="${book.id}">Issue Book</g:link>
               </g:else>
+            </td>
+            <td>
+              <g:link action="transferBook" controller="home" id="${book.id}">Transfer book</g:link>
             </td>
           </tr>
         </g:each>

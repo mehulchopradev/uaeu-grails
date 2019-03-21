@@ -34,6 +34,7 @@ class PrivateController {
     } */
 
     def registerUser(Student student) {
+      student.username = student.username.pipefy()
       def savedStudent = student.save flush: true
 
       println 'Saved student is'
