@@ -12,14 +12,19 @@ hibernate {
     cache.region.factory_class = 'org.hibernate.cache.ehcache.SingletonEhCacheRegionFactory' // Hibernate 4
     singleSession = true // configure OSIV singleSession mode
     flush.mode = 'manual' // OSIV session flush mode outside of transactional context
+    format_sql = true
 }
 
 // environment specific settings
 environments {
     development {
         dataSource {
-            dbCreate = "create-drop" // one of 'create', 'create-drop', 'update', 'validate', ''
-            url = "jdbc:h2:mem:devDb;MVCC=TRUE;LOCK_TIMEOUT=10000;DB_CLOSE_ON_EXIT=FALSE"
+            dbCreate = "update" // one of 'create', 'create-drop', 'update', 'validate', ''
+            driverClassName = 'com.mysql.jdbc.Driver'
+            url = "jdbc:mysql://localhost/uaeulibdb"
+            username = 'root'
+            password = 'root'
+            logSql = true
         }
     }
     test {
